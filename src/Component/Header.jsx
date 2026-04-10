@@ -1,6 +1,5 @@
 
-function Header(){
-
+const Header=()=>{
     return(
         <header>
             <h1>My web</h1>
@@ -16,5 +15,4 @@ function Header(){
         </header>
     );
 }
-
 export default Header

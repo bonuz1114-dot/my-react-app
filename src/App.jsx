@@ -1,10 +1,15 @@
-import Header from "./Header"
+import Header from "./Component/Header";
+import Button from "./Component/Button";
 
 function App() {
-
-  return(
-    <Header></Header>
+  return (
+    <>
+      <Header />
+      <div className="container">
+        <Button label="ตกลง" />
+      </div>
+    </>
   );
 }
 
-export default App
+export default App;
