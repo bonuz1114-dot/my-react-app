@@ -6,12 +6,23 @@ const DashboardButton = () => {
   const [count, setCount] = useState(0)
   return (
     <>
-    <button 
-      className="mybutton"
-      onClick={() => {setPressed(!pressed) ;setCount(count+1)}}
+    <div className='mybutton'>
+      <button 
+      className="dashboard-btn"
     >
       <h1>กด</h1>
-     </button>  
+     </button>
+     <button 
+      className="dashboard-btn"
+    >
+      <h1>กด</h1>
+      </button>
+      <button 
+      className="dashboard-btn"
+    >
+      <h1>กด</h1> 
+      </button> 
+    </div>
     </>
   );
 };

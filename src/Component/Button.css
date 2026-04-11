@@ -1,17 +1,36 @@
-.mybutton {
-    color: brown;
-    width: 100px;
-    padding: 8px 16px;
-    background-color: white;
-    border: 2px solid brown;
-    cursor: pointer;
-    transition: all 0.1s;
-    display: block;
-    margin: 0 auto;
+.mybutton{
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-left: 150px;
+
+}
+/* สไตล์ปกติของปุ่ม */
+
+.dashboard-btn {
+  background-color: #3b82f6; /* สีฟ้า */
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100px;
+
+  
+  
+  /* สำคัญ: ทำให้การเปลี่ยนแปลงนุ่มนวล */
+  transition: all 0.3s ease; 
 }
 
-.mybutton:active {
-    background-color: brown;
-    color: white;
-    transform: scale(0.95);
+
+
+
+/* แถม: เอฟเฟกต์เมื่อกด (Active) */
+.dashboard-btn:active {
+  transform: translateY(0); /* กลับมาที่เดิม */
+  scale: 0.95; /* หดตัวเล็กน้อยเหมือนโดนกดจริง */
 }
