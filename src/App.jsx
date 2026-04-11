@@ -1,13 +1,11 @@
 import Header from "./Component/Header";
-import Button from "./Component/Button";
+import DashboardButton from "./Component/Button";
 
 function App() {
   return (
     <>
       <Header />
-      <div className="container">
-        <Button label="ตกลง" />
-      </div>
+      <DashboardButton ></DashboardButton>
     </>
   );
 }

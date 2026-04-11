@@ -1,22 +1,19 @@
-const Button = ({ label, onClick }) => {
-  const buttonStyle = {
-    backgroundColor: "green",
-    color: "white",
-    padding: "10px 10px",
-    fontSize: "12px",
-    border: "none",
-    borderRadius: "4px",
-    cursor: "pointer",
+import { useState } from 'react'
+import './Button.css'
 
-    display: "inline-block", // ⭐ ใส่ตรงนี้
-    width: "auto",           // ⭐ ใส่ตรงนี้
-  };
-
+const DashboardButton = () => {
+  const [pressed, setPressed] = useState(false)
+  const [count, setCount] = useState(0)
   return (
-    <button style={buttonStyle} onClick={onClick}>
-      {label}
-    </button>
+    <>
+    <button 
+      className="mybutton"
+      onClick={() => {setPressed(!pressed) ;setCount(count+1)}}
+    >
+      <h1>กด</h1>
+     </button>  
+    </>
   );
 };
 
-export default Button;
+export default DashboardButton;
