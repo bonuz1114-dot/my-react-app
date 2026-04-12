@@ -1,11 +1,10 @@
-import Header from "./Component/Header";
-import DashboardButton from "./Component/Button";
+//import DashboardButton from "./Component/Button";
+import UserList from "./Component/myAxios";
 
 function App() {
   return (
     <>
-      <Header />
-      <DashboardButton ></DashboardButton>
+    <UserList></UserList>
     </>
   );
 }
