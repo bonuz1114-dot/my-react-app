@@ -3,18 +3,21 @@ import axios from 'axios';
 
 function UserList() {
   const controlLED = async (command) => {
-    try {
-      // ระบุ Content-Type เป็น text/plain เพื่อให้ server.arg("plain") ใน Arduino รับค่าได้แน่นอน
-      const res = await axios.post(`http://192.168.1.174/control`, 
-        { cmd: command },
-        { headers: { 'Content-Type': 'text/plain' } }
-      );
-      
-      console.log("ตอบกลับจากหุ่นยนต์:", res.data.status);
-    } catch (err) {
-      console.error("เชื่อมต่อหุ่นยนต์ไม่ได้! ตรวจสอบ WiFi หรือ IP บอร์ด");
-    }
-  };
+  try {
+    const res = await axios.post(`http://192.168.1.174/control`, 
+      { cmd: command },
+      { 
+        headers: { 
+          'Content-Type': 'text/plain' // ใช้ text/plain จะช่วยลดปัญหา CORS ในมือถือได้ดีกว่า
+        },
+        timeout: 5000 // ถ้า 5 วินาทีบอร์ดไม่ตอบ ให้ Error ทันที
+      }
+    );
+    console.log("บอร์ดตอบกลับมาว่า:", res.data);
+  } catch (err) {
+    console.error("เชื่อมต่อไม่ได้:", err.message);
+  }
+};
 
   return (
     <div className="flex gap-4 p-10 justify-center">
